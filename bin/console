@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "aircts_as_state_machine"
+
+I_KNOW_THAT_OPENSSL_VERIFY_PEER_EQUALS_VERIFY_NONE_IS_WRONG = nil
+
+require "openssl"
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
+Airrecord.api_key = ENV["AIRTABLE_PAT"]
+
+class TestRecord < AirctsAsStateMachine
+  self.base_key = "appOgPvFIu6rKpuzJ"
+  self.table_name = "tbl8JVXTmPUF3Nzg0"
+  aasm column: "state" do
+    state :foo, :bar, :baz
+
+    event :mark_bar do
+      transitions from: :foo, to: :bar
+      before do |name|
+        self["name"] = name
+      end
+    end
+    event :mark_foo do
+      transitions from: :bar, to: :foo
+    end
+  end
+end
+
+$x = TestRecord.find "recKdiUrw5RrizMVb"
+
+require "irb"
+IRB.start(__FILE__)
