@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/24c02/airrecord.git
-  revision: 5ae56c166b29f4ae2723edce99970e9c8e0d59a3
+  revision: b3486a9dc0b4c242d03d8106002e435dac92ad23
   specs:
     airrecord (1.1.0)
       faraday (>= 1.0, < 3.0)
