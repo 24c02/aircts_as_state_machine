@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = "aircts_as_state_machine"
-  spec.version = '0.1.0'
+  spec.version = '0.1.1'
   spec.authors = ["24c02"]
   spec.email = ["nora@hcb.pizza"]
 
