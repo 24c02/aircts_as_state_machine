@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "airrecord"
+require "norairrecord"
 require "aasm"
 
 module AASM
@@ -37,7 +37,7 @@ module AASM
 end
 
 # inherit from this as you would Airrecord::Table
-class AirctsAsStateMachine < Airrecord::Table
+class AirctsAsStateMachine < Norairrecord::Table
   include AASM
   include AASM::Persistence::AirrecordPersistence
 end
