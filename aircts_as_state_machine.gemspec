@@ -2,9 +2,9 @@
 
 Gem::Specification.new do |spec|
   spec.name = "aircts_as_state_machine"
-  spec.version = 0.1
+  spec.version = 0.1.0
   spec.authors = ["24c02"]
-  spec.email = ["haiii@nora.zip"]
+  spec.email = ["nora@hcb.pizza"]
 
   spec.summary = "aasm persistence for airrecord tables"
   spec.description = "don't"
@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "airrecord"
+  spec.add_dependency "norairrecord"
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
 end
